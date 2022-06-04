@@ -1,0 +1,25 @@
+﻿@model MVC_CollegeManagement.ViewModels.LoginViewModel
+    @*Define a view in the project in the Views/Account folder Login.html, 
+    through which the application will be logged in*@
+    <h2>Log in to the app</h2>
+    <form method="post" asp-controller="Account" asp-action="Login"
+          asp-route-returnUrl="@Model.ReturnUrl">
+        <div asp-validation-summary="ModelOnly"></div>
+        <div>
+            <label asp-for="Email"></label><br />
+            <input asp-for="Email" />
+            <span asp-validation-for="Email"></span>
+        </div>
+        <div>
+            <label asp-for="Password"></label><br />
+            <input asp-for="Password" />
+            <span asp-validation-for="Password"></span>
+        </div>
+        <div>
+            <label asp-for="RememberMe"></label><br />
+            <input asp-for="RememberMe" />
+        </div>
+        <div>
+            <input type="submit" value="Enter" />
+        </div>
+    </form>
